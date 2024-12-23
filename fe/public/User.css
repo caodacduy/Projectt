@@ -1,0 +1,80 @@
+/* Banner Styles */
+.banner {
+    background-color: #d8b57d;
+    text-align: center;
+    padding: 40px 0;
+    color: white;
+  }
+  
+  .banner-title {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  .banner-subtitle {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .banner-phone {
+    font-size: 18px;
+    margin: 10px 0 0;
+  }
+  
+  /* Card Image */
+  .food-image {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  /* Content Padding */
+  /* Nội dung */
+.ant-layout-content {
+  background-color: #f5f5f5;
+  padding: 20px; /* Khoảng cách bên trong */
+}
+
+/* Thêm khoảng trắng hai bên */
+.container {
+  max-width: 1200px; /* Giới hạn độ rộng tối đa */
+  margin: 0 auto; /* Canh giữa nội dung */
+  padding: 20px 40px; /* Tạo khoảng cách 40px ở hai bên */
+  background-color: white; /* Nền trắng cho container */
+  border-radius: 8px; /* Bo tròn góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng mờ */
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px; /* Thêm khoảng cách 2 bên */
+}
+
+@media (max-width: 768px) {
+  .banner {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .banner-title {
+    font-size: 18px;
+  }
+
+  .banner-subtitle {
+    font-size: 24px;
+  }
+
+  .banner-phone {
+    font-size: 14px;
+  }
+
+  .ant-layout-header {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .ant-layout-content {
+    padding: 12px;
+  }
+}
