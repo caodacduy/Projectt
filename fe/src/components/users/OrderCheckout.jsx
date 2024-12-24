@@ -26,7 +26,7 @@ const OrderCheckout = ({ cart, onOrderSuccess }) => {
         }))
       };
 
-      const response = await axios.post('http://localhost:8080/admin/api/order', orderData);
+      const response = await axios.post('https://backend-order-8.onrender.com/admin/api/order', orderData);
       
       if (response.status === 200) {
         message.success('Đặt hàng thành công!');

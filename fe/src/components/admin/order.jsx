@@ -71,9 +71,9 @@ const OrderAdmin = () => {
     const fetchData = async () => {
         try {
             const [notConfirmed, confirmed, completed] = await Promise.all([
-                axios.get('http://localhost:8080/admin/api/notconfirmed'),
-                axios.get('http://localhost:8080/admin/api/confirmed'),
-                axios.get('http://localhost:8080/admin/api/completed'),
+                axios.get('https://backend-order-8.onrender.com/admin/api/notconfirmed'),
+                axios.get('https://backend-order-8.onrender.com/admin/api/confirmed'),
+                axios.get('https://backend-order-8.onrender.com/admin/api/completed'),
             ]);
             setNotConfirmedOrders(formatOrders(notConfirmed.data));
             setConfirmedOrders(formatOrders(confirmed.data));
@@ -92,7 +92,7 @@ const OrderAdmin = () => {
 
     const handleConfirmOrder = async (id_order) => {
         try {
-            await axios.put(`http://localhost:8080/admin/api/order/confirm/${id_order}`);
+            await axios.put(`https://backend-order-8.onrender.com/admin/api/order/confirm/${id_order}`);
             message.success('Order confirmed successfully!');
             fetchData();
         } catch (error) {
@@ -103,7 +103,7 @@ const OrderAdmin = () => {
 
     const handleCompleteOrder = async (id_order) => {
         try {
-            await axios.put(`http://localhost:8080/admin/api/order/complete/${id_order}`);
+            await axios.put(`https://backend-order-8.onrender.com/admin/api/order/complete/${id_order}`);
             message.success('Order completed successfully!');
             fetchData();
         } catch (error) {
@@ -114,7 +114,7 @@ const OrderAdmin = () => {
 
     const handleDeleteOrder = async (id_order) => {
         try {
-            await axios.delete(`http://localhost:8080/admin/api/order/${id_order}`);
+            await axios.delete(`https://backend-order-8.onrender.com/admin/api/order/${id_order}`);
             message.success('Order deleted successfully!');
             fetchData();
         } catch (error) {

@@ -59,7 +59,7 @@ const FoodAdmin = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/admin/api/food');
+      const response = await axios.get('https://backend-order-8.onrender.com/admin/api/food');
       const formattedData = response.data.map((item) => ({
         ...item,
         key: item.id_food,
@@ -85,7 +85,7 @@ const FoodAdmin = () => {
     formData.append('img', img);
 
     try {
-      await axios.post('http://localhost:8080/admin/api/food', formData, {
+      await axios.post('https://backend-order-8.onrender.com/admin/api/food', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -122,7 +122,7 @@ const FoodAdmin = () => {
     }
   
     try {
-      await axios.put(`http://localhost:8080/admin/api/food/${editingRecord.id_food}`, formData);
+      await axios.put(`https://backend-order-8.onrender.com/admin/api/food/${editingRecord.id_food}`, formData);
       fetchData();
       message.success('Cập nhật món ăn thành công!');
     } catch (error) {
@@ -142,7 +142,7 @@ const FoodAdmin = () => {
       cancelText: 'Hủy',
       onOk: async () => {
         try {
-          await axios.delete(`http://localhost:8080/admin/api/food/${id_food}`);
+          await axios.delete(`https://backend-order-8.onrender.com/admin/api/food/${id_food}`);
           fetchData();
           message.success('Xóa món ăn thành công!');
         } catch (error) {

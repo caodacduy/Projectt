@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/admin/api/food";
+const API_BASE_URL = "https://backend-order-8.onrender.com/admin/api/food";
 
 export const getFoods = async () => {
   try {

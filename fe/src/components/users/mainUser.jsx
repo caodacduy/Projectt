@@ -28,7 +28,7 @@ const User = () => {
     const fetchFoods = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:8080/admin/api/food");
+        const response = await axios.get("https://backend-order-8.onrender.com/admin/api/food");
         const foodData = response.data || [];
         if (Array.isArray(foodData)) {
           setFoods(foodData);
@@ -89,22 +89,23 @@ const User = () => {
 
   const handleOrder = async (orderData) => {
     try {
-      const response = await axios.post("http://localhost:8080/admin/api/order", {
+      const response = await axios.post("https://backend-order-8.onrender.com/admin/api/order", {
         ...orderData,
         items: cart.map((item) => ({
           id_food: item.id_food,
           quantity: item.quantity,
         })),
       });
-      if (response.status === 200) {
+      if (response.status === 201) {
         message.success("Đặt hàng thành công!");
-        setCart([]);
-        setOpen(false);
+        setCart([]);  // Reset giỏ hàng
+        setOpen(false); // Đóng Drawer
       }
     } catch (error) {
       message.error("Có lỗi xảy ra khi đặt hàng!");
     }
   };
+  
 
   const categories = [
     { id: 0, name: "Tất cả" },

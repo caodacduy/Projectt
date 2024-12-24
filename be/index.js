@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 var cors = require('cors')
-const port = 8080;
+require('dotenv').config();
+const port = 8081;
 const bodyParser = require('body-parser');
 const routerAdmin=require("./routers/admin/routers")
 app.use(cors())
@@ -12,6 +13,10 @@ app.get('/', (req, res) => {
   res.send('Hello Express!');
 });
 app.use('/admin',routerAdmin)
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+process.on('uncaughtException', function (err) {
+  console.log(err);
 });
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
+});
+
